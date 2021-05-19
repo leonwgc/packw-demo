@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "clear":"rimraf ./dist & clear",
+    "clear": "rimraf ./dist & clear",
     "start": "packx start",
     "build": "packx build"
   },
@@ -19,6 +19,10 @@
   },
   "devDependencies": {
     "packx": "0.1.3",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-px-to-viewport": "^1.1.1",
     "rimraf": "^3.0.2"
   }
 }
