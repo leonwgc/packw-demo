@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import FormRender from "antd-form-render";
+import FormRender from 'antd-form-render';
 import { Form, Button, Space, Input, Radio, Select, message } from 'antd';
+import './antd.less';
 import './App.scss';
 
 const { Option } = Select;
@@ -218,11 +219,11 @@ export default function App() {
           }}
         >
           <h2>一行一列 (配置一维数组)</h2>
-          <FormRender layoutData={layout} />
+          <FormRender layoutData={layout} cols={1} />
         </Form>
         <Form className="form1" layout="vertical">
           <h2>一行多列 (配置二维数组)</h2>
-          <FormRender layoutData={layout1}></FormRender>
+          <FormRender layoutData={layout1} cols={1}></FormRender>
         </Form>
       </section>
       <section>
