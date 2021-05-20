@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import FormRender from "antd-form-render";
 import { Form, Button, Space, Input, Radio, Select, message } from 'antd';
-import './App.less';
+import './App.scss';
 
 const { Option } = Select;
 

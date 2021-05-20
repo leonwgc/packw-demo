@@ -1,7 +1,8 @@
 module.exports = (ctx) => {
   if (!/node_modules/.test(ctx.file)) {
     ctx.options.plugins.push([
-      'postcss-px-to-viewport', {
+      require('postcss-px-to-viewport'),
+      {
         unitToConvert: 'px',
         viewportWidth: 375,
         unitPrecision: 5,
@@ -16,7 +17,7 @@ module.exports = (ctx) => {
         include: undefined,
         landscape: false,
         landscapeUnit: 'vw',
-      }
+      },
     ]);
   }
 };
