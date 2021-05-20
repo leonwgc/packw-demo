@@ -5,7 +5,11 @@
   "scripts": {
     "clear": "rimraf ./dist & clear",
     "start": "packx start",
-    "build": "packx build"
+    "build": "packx build",
+    "start:h5": "target=h5 packx start h5",
+    "start:pc": "target=pc packx start pc",
+    "build:h5": "target=h5 packx build h5",
+    "build:pc": "target=pc packx build pc"
   },
   "author": "",
   "license": "ISC",

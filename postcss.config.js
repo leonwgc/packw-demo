@@ -1,5 +1,5 @@
 module.exports = (ctx) => {
-  if (!/node_modules/.test(ctx.file)) {
+  if (process.env.target === 'h5' && !/node_modules/.test(ctx.file)) {
     ctx.options.plugins.push([
       require('postcss-px-to-viewport'),
       {

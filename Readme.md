@@ -1,9 +1,10 @@
 ### packx-demo
 
-#### demo 开发构建
-- 开发 yarn start demo
-- 构建 yarn start demo
+##### 开发
+- h5: yarn start:h5
+- pc: yarn start:pc
 
-#### demoa 开发构建
-- 开发 yarn start demoa
-- 构建 yarn start demoa
+#### 构建
+- h5: yarn build:h5
+- pc: yarn build:pc
+
