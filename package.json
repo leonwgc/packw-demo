@@ -22,7 +22,7 @@
     "zarm-form-render": "^1.1.2"
   },
   "devDependencies": {
-    "packx": "^0.1.6",
+    "packx": "^0.1.7",
     "postcss-px-to-viewport": "^1.1.1",
     "rimraf": "^3.0.2"
   }
