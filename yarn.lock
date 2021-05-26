@@ -880,6 +880,14 @@
     "@babel/helper-validator-option" "^7.12.17"
     "@babel/plugin-transform-typescript" "^7.13.0"
 
+"@babel/runtime-corejs3@^7.14.0":
+  version "7.14.0"
+  resolved "https://registry.npmjs.org/@babel/runtime-corejs3/-/runtime-corejs3-7.14.0.tgz#6bf5fbc0b961f8e3202888cb2cd0fb7a0a9a3f66"
+  integrity sha512-0R0HTZWHLk6G8jIk0FtoX+AatCtKnswS98VhXwGImFc759PJRp4Tru0PQYZofyijTFUr+gT8Mu7sgXVJLQ0ceg==
+  dependencies:
+    core-js-pure "^3.0.0"
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.10.1", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.11.1", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.0", "@babel/runtime@^7.8.4":
   version "7.14.0"
   resolved "https://registry.nlark.com/@babel/runtime/download/@babel/runtime-7.14.0.tgz?cache=0&sync_timestamp=1619727414495&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40babel%2Fruntime%2Fdownload%2F%40babel%2Fruntime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
@@ -2046,6 +2054,11 @@ core-js-compat@^3.9.0, core-js-compat@^3.9.1:
   dependencies:
     browserslist "^4.16.6"
     semver "7.0.0"
+
+core-js-pure@^3.0.0:
+  version "3.12.1"
+  resolved "https://registry.npmjs.org/core-js-pure/-/core-js-pure-3.12.1.tgz#934da8b9b7221e2a2443dc71dfa5bd77a7ea00b8"
+  integrity sha512-1cch+qads4JnDSWsvc7d6nzlKAippwjUlf6vykkTLW53VSV+NkE6muGBToAjEA8pG90cSfcud3JgVmW2ds5TaQ==
 
 core-js@3:
   version "3.12.1"
@@ -4006,10 +4019,10 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
 
-packx@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.npmjs.org/packx/-/packx-0.1.7.tgz#84ca9b2c808ea28d0cb66279b27214eeae95acb4"
-  integrity sha512-4HF1E8ndZTB2VIBEtnXIILcWzgCcPWUzkru+hGVmcZXW4MvU4SSX6Rudo6I5s+l3xIaQyU5rdcHpCv7qOX0h0g==
+packx@~0.4.0:
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/packx/-/packx-0.4.0.tgz#3775e82d8b618961a7ca2d32df9cbac6e607b09f"
+  integrity sha512-+6TOBOs7/FYKGwcLX79O7gf41rMPmvzh23SEZWTvWi309XE8FSS4E/ux0Lc+1PPHNlVm8pjaruVpCaObqQuRtw==
   dependencies:
     "@babel/cli" "^7.14.3"
     "@babel/core" "^7.14.3"
@@ -4022,6 +4035,7 @@ packx@^0.1.7:
     "@babel/preset-stage-0" "^7.8.3"
     "@babel/preset-typescript" "^7.13.0"
     "@babel/runtime" "^7.14.0"
+    "@babel/runtime-corejs3" "^7.14.0"
     "@pmmmwh/react-refresh-webpack-plugin" "^0.4.3"
     autoprefixer "^10.2.4"
     babel-eslint "^10.1.0"
@@ -4053,6 +4067,7 @@ packx@^0.1.7:
     webpack-bundle-analyzer "^4.4.2"
     webpack-cli "^4.7.0"
     webpack-dev-server "^3.11.2"
+    webpack-merge "^5.7.3"
     webpack-node-externals "^3.0.0"
     webpackbar "^4.0.0"
     yargs "^17.0.1"

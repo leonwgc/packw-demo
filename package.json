@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "clear": "rimraf ./dist & clear",
+    "clear": "rimraf ./dist && rimraf ./t-dist & clear",
     "start": "packx start",
     "build": "packx build",
+    "start:node": "node packx --dev --env test --cfg",
+    "build:node": "node packx --env test --cfg",
     "start:h5": "target=h5 packx start h5",
     "start:pc": "target=pc packx start pc",
     "build:h5": "target=h5 packx build h5",
@@ -22,7 +24,7 @@
     "zarm-form-render": "^1.1.2"
   },
   "devDependencies": {
-    "packx": "^0.1.7",
+    "packx": "~0.4.0",
     "postcss-px-to-viewport": "^1.1.1",
     "rimraf": "^3.0.2"
   }
