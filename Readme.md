@@ -51,7 +51,7 @@ export const pc = () => {
 
 ```
 3.  构建mpa
- pack.config.js
+ packx.config.js
 
 ```js
 const path = require('path');
@@ -73,7 +73,7 @@ module.exports = {
 ![ssr.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/32a42d9addeb4ceeb8c23ffa07f0ec04~tplv-k3u1fbpfcp-watermark.image)
 
 4. 定义node webserver, 下面以express为例
-pack.server.js
+packx.server.js
 ```js
 const express = require('express');
 const app = express();
