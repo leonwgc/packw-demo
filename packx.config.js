@@ -9,7 +9,7 @@ module.exports = {
     port: 3000,
   },
   output: {
-    path: path.resolve(__dirname, './dist/packx-demo'),
+    path: path.resolve(__dirname, './dist'),
     publicPath: '',
   },
 };

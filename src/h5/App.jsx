@@ -10,7 +10,7 @@ import {
   Toast,
   Panel,
 } from 'zarm';
-import 'zarm/dist/zarm.min.css';
+// import 'zarm/dist/zarm.min.css';
 import './App.less';
 
 export default function App() {
