@@ -1,4 +1,4 @@
-const { getSsrLib, injectHtmlToRootNode } = require('packx');
+const { getSsrLib } = require('packx');
 const chalk = require('chalk');
 
 getSsrLib({ index: './src/index.ssr.js' }, () => {
