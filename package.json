@@ -12,7 +12,7 @@
     "start:pc": "target=pc packx start pc",
     "build:h5": "target=h5 packx build h5",
     "build:pc": "target=pc packx build pc",
-    "ssr":"yarn clear && packx run --build && node packx.ssr.js && node packx.server.js"
+    "ssr": "yarn clear && packx run --build && node packx.ssr.js && node packx.server.js"
   },
   "author": "",
   "license": "ISC",
@@ -30,6 +30,8 @@
     "express": "^4.17.1",
     "packx": "~0.4.2",
     "postcss-px-to-viewport": "^1.1.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "simple-redux-store": "^0.1.4",
+    "whooks": "^0.1.0"
   }
 }
