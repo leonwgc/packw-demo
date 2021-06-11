@@ -1,35 +1,27 @@
 import React, { Suspense } from 'react';
 import { ConfigProvider } from 'antd';
-import zhCN from 'antd/es/locale/zh_CN';
-import { Route, Switch, HashRouter as Router } from 'react-router-dom';
-import { Provider, configureStore } from 'simple-redux-store';
+import zhCN from 'antd/lib/locale/zh_CN';
+import { Route, Switch, BrowserRouter, StaticRouter } from 'react-router-dom';
 import routes from './RouteConfig';
-import { Spin } from 'antd';
 import './App.less';
 
-const Routes = () => {
-  const store = configureStore();
-
+const Routes = ({ location }) => {
+  const Router = typeof window === 'undefined' ? StaticRouter : BrowserRouter;
   return (
-    <Provider store={store}>
-      <ConfigProvider locale={zhCN}>
-        <Router>
-          <Suspense fallback={<Spin />}>
-            <Switch>
-              {routes.map((route, idx) => (
-                <Route
-                  key={idx}
-                  path={route.path}
-                  exact={route.exact}
-                  component={route.component}
-                />
-              ))}
-              <Route render={() => <div>page not found</div>} />
-            </Switch>
-          </Suspense>
-        </Router>
-      </ConfigProvider>
-    </Provider>
+    <ConfigProvider locale={zhCN}>
+      <Router location={location}>
+        <Switch>
+          {routes.map((route, idx) => (
+            <Route
+              key={idx}
+              path={route.path}
+              exact={route.exact}
+              component={route.component}
+            />
+          ))}
+        </Switch>
+      </Router>
+    </ConfigProvider>
   );
 };
 

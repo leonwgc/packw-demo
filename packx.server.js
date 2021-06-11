@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const { h5, pc } = require('./ssr-lib/index');
+const { demo, h5, pc } = require('./ssr-lib/index');
 app.disable('x-powered-by');
 app.enable('trust proxy');
 
@@ -27,9 +27,19 @@ app.get(/\/h5/, (req, res, next) => {
   });
 });
 
-app.get(/\//, (req, res, next) => {
+app.get(/\/pc/, (req, res, next) => {
   // pc() get pc ssr content
   res.render('pc', { html: pc(), delimiter: '?' }, (err, str) => {
+    if (err) {
+      throw err;
+    }
+    res.send(str);
+  });
+});
+
+app.get(/\//, (req, res, next) => {
+  // pc() get pc ssr content
+  res.render('index', { html: demo(req.path), delimiter: '?' }, (err, str) => {
     if (err) {
       throw err;
     }

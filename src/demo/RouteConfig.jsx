@@ -1,37 +1,14 @@
-import { lazy } from 'react';
+import Page1 from './Page1';
+import Page2 from './Page2';
 
 const routes = [
   {
-    path: '/useDragMove',
-    component: lazy(() => import('./useDragMove')),
+    path: '/page1',
+    component: Page1,
   },
   {
-    path: '/useCountdown',
-    component: lazy(() => import('./useCountdown')),
-  },
-  {
-    path: '/useInViewport',
-    component: lazy(() => import('./useInViewport')),
-  },
-  {
-    path: '/usePrevious',
-    component: lazy(() => import('./usePrevious')),
-  },
-  {
-    path: '/useSort',
-    component: lazy(() => import('./useSort')),
-  },
-  {
-    path: '/useEffect',
-    component: lazy(() => import('./useEffect')),
-  },
-  {
-    path: '/useCookie',
-    component: lazy(() => import('./useCookie')),
-  },
-  {
-    path: '/useFetch',
-    component: lazy(() => import('./useFetch')),
+    path: '/page2',
+    component: Page2,
   },
 ];
 

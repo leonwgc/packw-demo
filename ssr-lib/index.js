@@ -51,6 +51,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  "demo": () => (/* binding */ demo),
   "h5": () => (/* binding */ h5),
   "pc": () => (/* binding */ pc)
 });
@@ -463,7 +464,72 @@ function App_App() {
     cols: cols
   }))));
 }
+;// CONCATENATED MODULE: external "antd/lib/locale/zh_CN"
+const zh_CN_namespaceObject = require("antd/lib/locale/zh_CN");;
+var zh_CN_default = /*#__PURE__*/__webpack_require__.n(zh_CN_namespaceObject);
+;// CONCATENATED MODULE: external "react-router-dom"
+const external_react_router_dom_namespaceObject = require("react-router-dom");;
+;// CONCATENATED MODULE: ./src/demo/Page1.jsx
+
+
+
+var Page1_App = function App() {
+  return /*#__PURE__*/external_react_default().createElement("div", null, "page1 ", /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Link, {
+    to: "/page2"
+  }), " goto page2");
+};
+
+/* harmony default export */ const Page1 = (Page1_App);
+;// CONCATENATED MODULE: ./src/demo/Page2.jsx
+
+
+
+var Page2_App = function App() {
+  return /*#__PURE__*/external_react_default().createElement("div", null, "page2 ", /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Link, {
+    to: "/page1"
+  }), " goto page1");
+};
+
+/* harmony default export */ const Page2 = (Page2_App);
+;// CONCATENATED MODULE: ./src/demo/RouteConfig.jsx
+
+
+var routes = [{
+  path: '/page1',
+  component: Page1
+}, {
+  path: '/page2',
+  component: Page2
+}];
+/* harmony default export */ const RouteConfig = (routes);
+;// CONCATENATED MODULE: ./src/demo/App.jsx
+
+
+
+
+
+
+
+var Routes = function Routes(_ref) {
+  var location = _ref.location;
+  var Router = typeof window === 'undefined' ? external_react_router_dom_namespaceObject.StaticRouter : external_react_router_dom_namespaceObject.BrowserRouter;
+  return /*#__PURE__*/external_react_default().createElement(external_antd_namespaceObject.ConfigProvider, {
+    locale: (zh_CN_default())
+  }, /*#__PURE__*/external_react_default().createElement(Router, {
+    location: location
+  }, /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Switch, null, RouteConfig.map(function (route, idx) {
+    return /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Route, {
+      key: idx,
+      path: route.path,
+      exact: route.exact,
+      component: route.component
+    });
+  }))));
+};
+
+/* harmony default export */ const demo_App = (Routes);
 ;// CONCATENATED MODULE: ./src/index.ssr.js
+
 
 
 
@@ -473,6 +539,12 @@ var h5 = function h5() {
 };
 var pc = function pc() {
   return server_default().renderToString( /*#__PURE__*/external_react_default().createElement(App_App, null));
+}; // use route
+
+var demo = function demo(location) {
+  return server_default().renderToString( /*#__PURE__*/external_react_default().createElement(demo_App, {
+    location: location
+  }));
 };
 module.exports = __webpack_exports__;
 /******/ })()
