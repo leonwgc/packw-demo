@@ -3,6 +3,7 @@ import ReactDOMServer from 'react-dom/server';
 import H5App from './h5/App';
 import PcApp from './pc/App';
 import App from './demo/App';
+import { Provider, configureStore } from 'simple-redux-store';
 
 export const h5 = () => {
   return ReactDOMServer.renderToString(<H5App />);
@@ -14,5 +15,10 @@ export const pc = () => {
 
 // use route
 export const demo = (location) => {
-  return ReactDOMServer.renderToString(<App location={location} />);
+  const store = configureStore({ name: 'wgc' });
+  return ReactDOMServer.renderToString(
+    <Provider store={store}>
+      <App location={location} />
+    </Provider>,
+  );
 };

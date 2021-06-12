@@ -469,14 +469,26 @@ const zh_CN_namespaceObject = require("antd/lib/locale/zh_CN");;
 var zh_CN_default = /*#__PURE__*/__webpack_require__.n(zh_CN_namespaceObject);
 ;// CONCATENATED MODULE: external "react-router-dom"
 const external_react_router_dom_namespaceObject = require("react-router-dom");;
+;// CONCATENATED MODULE: external "simple-redux-store"
+const external_simple_redux_store_namespaceObject = require("simple-redux-store");;
 ;// CONCATENATED MODULE: ./src/demo/Page1.jsx
 
 
 
+
 var Page1_App = function App() {
-  return /*#__PURE__*/external_react_default().createElement("div", null, "page1 ", /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Link, {
+  var app = (0,external_simple_redux_store_namespaceObject.useSelector)(function (s) {
+    return s.app;
+  });
+  var updateStore = (0,external_simple_redux_store_namespaceObject.useUpdateStore)();
+  (0,external_react_namespaceObject.useEffect)(function () {
+    updateStore({
+      page: 'page1'
+    });
+  }, []);
+  return /*#__PURE__*/external_react_default().createElement("div", null, app.page, " ", /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Link, {
     to: "/page2"
-  }), " goto page2");
+  }, "goto page2"));
 };
 
 /* harmony default export */ const Page1 = (Page1_App);
@@ -484,10 +496,20 @@ var Page1_App = function App() {
 
 
 
+
 var Page2_App = function App() {
-  return /*#__PURE__*/external_react_default().createElement("div", null, "page2 ", /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Link, {
+  var app = (0,external_simple_redux_store_namespaceObject.useSelector)(function (s) {
+    return s.app;
+  });
+  var updateStore = (0,external_simple_redux_store_namespaceObject.useUpdateStore)();
+  (0,external_react_namespaceObject.useEffect)(function () {
+    updateStore({
+      page: 'page2'
+    });
+  }, []);
+  return /*#__PURE__*/external_react_default().createElement("div", null, app.name, "/", app.page, " ", /*#__PURE__*/external_react_default().createElement(external_react_router_dom_namespaceObject.Link, {
     to: "/page1"
-  }), " goto page1");
+  }, "goto page1"));
 };
 
 /* harmony default export */ const Page2 = (Page2_App);
@@ -534,6 +556,7 @@ var Routes = function Routes(_ref) {
 
 
 
+
 var h5 = function h5() {
   return server_default().renderToString( /*#__PURE__*/external_react_default().createElement(App, null));
 };
@@ -542,9 +565,14 @@ var pc = function pc() {
 }; // use route
 
 var demo = function demo(location) {
-  return server_default().renderToString( /*#__PURE__*/external_react_default().createElement(demo_App, {
+  var store = (0,external_simple_redux_store_namespaceObject.configureStore)({
+    name: 'wgc'
+  });
+  return server_default().renderToString( /*#__PURE__*/external_react_default().createElement(external_simple_redux_store_namespaceObject.Provider, {
+    store: store
+  }, /*#__PURE__*/external_react_default().createElement(demo_App, {
     location: location
-  }));
+  })));
 };
 module.exports = __webpack_exports__;
 /******/ })()
