@@ -57,22 +57,22 @@ __webpack_require__.d(__webpack_exports__, {
 });
 
 ;// CONCATENATED MODULE: external "react"
-const external_react_namespaceObject = require("react");;
+const external_react_namespaceObject = require("react");
 var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_namespaceObject);
 ;// CONCATENATED MODULE: external "react-dom/server"
-const server_namespaceObject = require("react-dom/server");;
+const server_namespaceObject = require("react-dom/server");
 var server_default = /*#__PURE__*/__webpack_require__.n(server_namespaceObject);
 ;// CONCATENATED MODULE: external "@babel/runtime/helpers/defineProperty"
-const defineProperty_namespaceObject = require("@babel/runtime/helpers/defineProperty");;
+const defineProperty_namespaceObject = require("@babel/runtime/helpers/defineProperty");
 var defineProperty_default = /*#__PURE__*/__webpack_require__.n(defineProperty_namespaceObject);
 ;// CONCATENATED MODULE: external "@babel/runtime/helpers/slicedToArray"
-const slicedToArray_namespaceObject = require("@babel/runtime/helpers/slicedToArray");;
+const slicedToArray_namespaceObject = require("@babel/runtime/helpers/slicedToArray");
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray_namespaceObject);
 ;// CONCATENATED MODULE: external "zarm-form-render"
-const external_zarm_form_render_namespaceObject = require("zarm-form-render");;
+const external_zarm_form_render_namespaceObject = require("zarm-form-render");
 var external_zarm_form_render_default = /*#__PURE__*/__webpack_require__.n(external_zarm_form_render_namespaceObject);
 ;// CONCATENATED MODULE: external "zarm"
-const external_zarm_namespaceObject = require("zarm");;
+const external_zarm_namespaceObject = require("zarm");
 ;// CONCATENATED MODULE: ./src/h5/App.jsx
 
 
@@ -195,10 +195,10 @@ function App() {
   }));
 }
 ;// CONCATENATED MODULE: external "antd-form-render"
-const external_antd_form_render_namespaceObject = require("antd-form-render");;
+const external_antd_form_render_namespaceObject = require("antd-form-render");
 var external_antd_form_render_default = /*#__PURE__*/__webpack_require__.n(external_antd_form_render_namespaceObject);
 ;// CONCATENATED MODULE: external "antd"
-const external_antd_namespaceObject = require("antd");;
+const external_antd_namespaceObject = require("antd");
 ;// CONCATENATED MODULE: ./src/pc/App.tsx
 
 
@@ -465,12 +465,12 @@ function App_App() {
   }))));
 }
 ;// CONCATENATED MODULE: external "antd/lib/locale/zh_CN"
-const zh_CN_namespaceObject = require("antd/lib/locale/zh_CN");;
+const zh_CN_namespaceObject = require("antd/lib/locale/zh_CN");
 var zh_CN_default = /*#__PURE__*/__webpack_require__.n(zh_CN_namespaceObject);
 ;// CONCATENATED MODULE: external "react-router-dom"
-const external_react_router_dom_namespaceObject = require("react-router-dom");;
+const external_react_router_dom_namespaceObject = require("react-router-dom");
 ;// CONCATENATED MODULE: external "simple-redux-store"
-const external_simple_redux_store_namespaceObject = require("simple-redux-store");;
+const external_simple_redux_store_namespaceObject = require("simple-redux-store");
 ;// CONCATENATED MODULE: ./src/demo/Page1.jsx
 
 
