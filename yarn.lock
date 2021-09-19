@@ -4396,10 +4396,10 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.npmjs.org/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
 
-packx@~0.4.8:
-  version "0.4.8"
-  resolved "https://registry.npmjs.org/packx/-/packx-0.4.8.tgz#e2e26e0e257923cbdb28dfd296e2f75c11f910b1"
-  integrity sha512-l5zUC79NLQxmgbKXziHHWJ+bLuYA5WFPJqRI+/U3k7cgfG4Lqlsc8PbJkNtTAhmzDurH8ebi2qf9/UWq0C6lnA==
+packx@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.npmjs.org/packx/-/packx-0.5.0.tgz#a2493ac60a7a3339cedafc6e91a0c5a9db3b5036"
+  integrity sha512-nTsZnOIbV6V6NyWAXkiFdcuPVZNSq2zCmYat1sqR2iuErkY59KNqEYiqKuFVoI+fCDm5R5IPGcAKDnNNGOJYdw==
   dependencies:
     "@babel/cli" "^7.14.8"
     "@babel/core" "^7.15.0"

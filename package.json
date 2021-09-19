@@ -4,15 +4,9 @@
   "description": "",
   "scripts": {
     "clear": "rimraf ./dist && rimraf ./t-dist & clear",
-    "start": "packx start",
-    "build": "packx build",
-    "start:node": "node packx --dev --env test --cfg",
-    "build:node": "node packx --env test --cfg",
-    "start:h5": "target=h5 packx start h5",
-    "start:pc": "target=pc packx start pc",
-    "build:h5": "target=h5 packx build h5",
-    "build:pc": "target=pc packx build pc",
-    "ssr": "yarn clear && packx run --build && node packx.ssr.js && node packx.server.js"
+    "start": "node packx  --dev --cfg ",
+    "build": "node packx --env prd --cfg ",
+    "ssr": "yarn clear && node packx.ssr.client && node packx.ssr.js && node packx.server.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,7 +23,7 @@
     "@types/express": "^4.17.12",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "packx": "~0.4.8",
+    "packx": "0.5.0",
     "postcss-px-to-viewport": "^1.1.1",
     "rimraf": "^3.0.2",
     "sass": "^1.37.0"
