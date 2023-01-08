@@ -1,19 +1,14 @@
 import React from 'react';
-import { Button } from 'react-uni-comps';
 
 const Page1 = ({ history }) => {
   return (
     <div>
-      <Button
-        as="div"
-        type="primary"
-        block
+      <div
+        style={{ background: '#005cff', color: '#fff', padding: '30px 12px' }}
         onClick={() => history.push('/page2')}
       >
         go to page2
-      </Button>
-
-      <div>this is page 1</div>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@
     "clear": "rimraf ./dist && rimraf ./t-dist & clear",
     "start": "node pack  --dev --cfg ",
     "build": "node pack --env prd --cfg ",
-    "ssr": "yarn clear && node packw.ssr.client && node packw.ssr.js && node app.js"
+    "ssr": "yarn clear && node pack.ssr.client && node pack.ssr.js && node app.js"
   },
   "author": "",
   "license": "ISC",

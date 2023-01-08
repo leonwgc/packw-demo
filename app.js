@@ -39,7 +39,7 @@ app.get(/\/pc/, (req, res, next) => {
 
 app.get(/\//, (req, res, next) => {
   // pc() get pc ssr content
-  res.render('index', { html: demo(req.path), delimiter: '?' }, (err, str) => {
+  res.render('index', { html: index(req.path), delimiter: '?' }, (err, str) => {
     if (err) {
       throw err;
     }

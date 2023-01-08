@@ -8,7 +8,7 @@ const process = require('process');
 const isDev = !!argv.dev;
 const cfg = argv.cfg;
 const env = argv.env;
-const publicPath = isDev ? '' : `/`;
+// const publicPath = isDev ? '' : `/`;
 
 function getPath(_path) {
   return path.resolve(__dirname, _path);
@@ -42,7 +42,6 @@ packw(
     },
     output: {
       path: getDist(env),
-      publicPath,
     },
   },
   () => {

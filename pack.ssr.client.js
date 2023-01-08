@@ -8,14 +8,10 @@ packw(
     entry: {
       h5: './src/h5/index',
       pc: './src/pc/index',
-      index: './src/demo/index',
-    },
-    devServer: {
-      port: 3000,
+      route: './src/route/index',
     },
     output: {
       path: path.resolve(__dirname, './dist'),
-      publicPath: '',
     },
   },
   () => {

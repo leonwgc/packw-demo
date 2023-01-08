@@ -1,20 +1,19 @@
 import React from 'react';
-import { Button } from 'react-uni-comps';
 
 const Page2 = ({ history }) => {
   return (
     <div>
-      <Button
-        as="div"
-        style={{ height: 60 }}
-        block
-        outlined
+      <div
+        style={{
+          padding: '30px 12px',
+          border: '1px solid #005cff',
+          textAlign: 'center',
+          fontSize: 24,
+        }}
         onClick={() => history.push('/page1')}
       >
         go to page1
-      </Button>
-
-      <div>this is page 2</div>
+      </div>
     </div>
   );
 };
