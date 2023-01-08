@@ -1,4 +1,4 @@
-const { default: packx } = require('packx');
+const { default: packw } = require('packw');
 const argv = require('yargs').argv;
 const pkg = require('./package.json');
 const chalk = require('chalk');
@@ -31,7 +31,7 @@ if (!isDev && !['prd', 'test'].includes(env)) {
   exit('params: env must be prd/test');
 }
 
-packx(
+packw(
   isDev,
   {
     entry: {

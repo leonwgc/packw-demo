@@ -1,4 +1,4 @@
-### packx-demo
+### packw-demo
 
 ##### 开发
 
@@ -58,9 +58,9 @@ export const pc = () => {
 ```js
 const path = require('path');
 const chalk = require('chalk');
-const { default: packx } = require('packx');
+const { default: packw } = require('packw');
 
-packx(
+packw(
   false,
   {
     entry: {
@@ -82,7 +82,7 @@ packx(
 ![ssr.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/32a42d9addeb4ceeb8c23ffa07f0ec04~tplv-k3u1fbpfcp-watermark.image)
 
 4. 定义 node webserver, 下面以 express 为例
-   packx.server.js
+   packw.server.js
 
 ```js
 const express = require('express');

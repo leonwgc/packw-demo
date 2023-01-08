@@ -3,7 +3,8 @@ import Page2 from './Page2';
 
 const routes = [
   {
-    path: '/page1',
+    path: '/',
+    extact: true,
     component: Page1,
   },
   {

@@ -1,8 +1,8 @@
 const path = require('path');
 const chalk = require('chalk');
-const { default: packx } = require('packx');
+const { default: packw } = require('packw');
 
-packx(
+packw(
   false,
   {
     entry: {

@@ -1,4 +1,4 @@
-const { getSsrLib } = require('packx');
+const { getSsrLib } = require('packw');
 const chalk = require('chalk');
 
 getSsrLib({ index: './src/index.ssr.js' }, () => {
