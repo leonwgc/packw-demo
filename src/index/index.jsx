@@ -5,7 +5,7 @@ import App from './App';
 
 const store = configureStore({ name: 'client' }, __dev__);
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Provider store={store}>
     <App />
   </Provider>,

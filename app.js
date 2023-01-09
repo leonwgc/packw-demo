@@ -6,18 +6,14 @@ app.disable('x-powered-by');
 app.enable('trust proxy');
 
 app.set('view engine', 'html');
+app.set('views', path.resolve(__dirname, 'dist')); // specify the views directory
 app.engine('html', require('ejs').renderFile);
-app.set('views', path.resolve(__dirname, 'dist'));
 
 const distRoot = path.resolve(__dirname, 'dist');
 
-app.get(/\.html?/, (req, res, next) => {
-  res.redirect('/');
-});
-
 app.use(express.static(distRoot));
 
-app.use((req, res, next) => {
+app.get(/\/*/, (req, res) => {
   const context = {};
 
   res.render(

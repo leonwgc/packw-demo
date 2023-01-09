@@ -1,94 +1,66 @@
-### packw-demo
+
+## packw 打包，构建， ssr 示例
 
 ##### 开发
 
-- yarn start h5
-- yarn start pc
+- yarn start index
 
 #### 构建
 
-- yarn build h5
-- yarn build pc
+- yarn build index
 
 ### ssr
 
-1.  构建 ssr commonjs2 lib
-    定义入口 index.ssr.js
+1. node端打包，构建commonjs库, 放在ssr-lib目录, 以动态调用ReactDOMServer.renderToString 生产html
+
+打包命令: node pack.ssr.js, 构建入口 /src/index.ssr.jsx 
 
 ```js
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import H5App from './h5/App';
-import PcApp from './pc/App';
+import { Provider, configureStore } from 'simple-redux-store';
+import App from './App';
 
-export const h5 = () => {
-  return ReactDOMServer.renderToString(<H5App />);
+export const indexRender = (location, context) => {
+  const store = configureStore({ name: 'server' });
+  return ReactDOMServer.renderToString(
+    <Provider store={store}>
+      <App location={location} context={context} />
+    </Provider>,
+  );
 };
-
-export const pc = () => {
-  return ReactDOMServer.renderToString(<PcApp />);
-};
-```
-
-2. 定义 html 模板 （注意 -html 用?为了避免和 html-webpack-plugin 冲突）
-
-```js
-<!DOCTYPE html>
-<html lang="zh-cn">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover"
-    />
-    <meta name="format-detection" content="telephone=no, email=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-touch-fullscreen" content="yes" />
-    <title></title>
-  </head>
-  <body style="font-size: 14px">
-    <div id="root"><?-html?></div>
-  </body>
-</html>
 
 ```
 
-3. 静态资源构建
+2.  web端打包, 执行ReactDOM.hydrate , 打包结果放在dist目录,此时已经构建好css和js bundles , html内容等待node调用ejs注入（埋了一个注入点<?-html?>）
+
+打包命令: node pack.ssr.client.js, 打包入口 /src/index.jsx 
 
 ```js
-const path = require('path');
-const chalk = require('chalk');
-const { default: packw } = require('packw');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider, configureStore } from 'simple-redux-store';
+import App from './App';
 
-packw(
-  false,
-  {
-    entry: {
-      h5: './src/h5/index',
-      pc: './src/pc/index',
-      index: './src/demo/index',
-    },
-    output: {
-      path: path.resolve(__dirname, './dist'),
-      publicPath: '',
-    },
-  },
-  () => {
-    console.log(chalk.yellowBright('static assets build successfully'));
-  },
+const store = configureStore({ name: 'client' }, __dev__);
+
+ReactDOM.hydrate(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
 );
+
 ```
 
-![ssr.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/32a42d9addeb4ceeb8c23ffa07f0ec04~tplv-k3u1fbpfcp-watermark.image)
-
-4. 定义 node webserver, 下面以 express 为例
-   packw.server.js
+3. 启动node服务，接受请求， 动态调用commonjs库函数，生产html ,通过ejs 注入到dist模板index.html 文件， 发送给浏览器
+    
 
 ```js
 const express = require('express');
 const app = express();
 const path = require('path');
-const { h5, pc } = require('./ssr-lib/index');
+const ssrRenderer = require('./ssr-lib/index'); // pack.ssr.js 构建的commonjs模块， 导出了一个对象
 app.disable('x-powered-by');
 app.enable('trust proxy');
 
@@ -104,24 +76,19 @@ app.get(/\.html?/, (req, res, next) => {
 
 app.use(express.static(distRoot));
 
-app.get(/\/h5/, (req, res, next) => {
-  // h5() get h5 ssr content
-  res.render('h5', { html: h5(), delimiter: '?' }, (err, str) => {
-    if (err) {
-      throw err;
-    }
-    res.send(str);
-  });
-});
+app.use((req, res, next) => {
+  const context = {};
 
-app.get(/\//, (req, res, next) => {
-  // pc() get pc ssr content
-  res.render('pc', { html: pc(), delimiter: '?' }, (err, str) => {
-    if (err) {
-      throw err;
-    }
-    res.send(str);
-  });
+  res.render(
+    'index',
+    { html: ssrRenderer.indexRender(req.url, context), delimiter: '?' },
+    (err, str) => {
+      if (err) {
+        throw err;
+      }
+      res.send(str);
+    },
+  );
 });
 
 app.use((req, res) => {
@@ -138,16 +105,5 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.info(`==> 🍺  Express server running at localhost: ${PORT}`);
 });
+
 ```
-
-5. 启动 server node pack.server.js
-
-6. 访问截图， 包括 ssr 的 html 源码
-
-![pc.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/9cbef3ba6fe146d0a68357a250728d72~tplv-k3u1fbpfcp-watermark.image)
-
-![h5.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/637e32653d704cedb4d4bf1217c3555a~tplv-k3u1fbpfcp-watermark.image)
-
-![h5.src.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/15313a2172c549889cbd61e60e15fc74~tplv-k3u1fbpfcp-watermark.image)
-
-![pc.src.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ee89111ca952483c8a4b239b147e5a5c~tplv-k3u1fbpfcp-watermark.image)
