@@ -11,7 +11,7 @@
 
 ### ssr
 
-1. node端打包，构建commonjs库, 放在ssr-lib目录, 以动态调用ReactDOMServer.renderToString 生产html
+1. node端打包，构建commonjs库, 放在ssr-lib目录, node调用ReactDOMServer.renderToString 渲染html
 
 打包命令: node pack.ssr.js, 构建入口 /src/index.ssr.jsx 
 
@@ -70,10 +70,6 @@ app.set('views', path.resolve(__dirname, 'dist'));
 
 const distRoot = path.resolve(__dirname, 'dist');
 
-app.get(/\.html?/, (req, res, next) => {
-  res.redirect('/');
-});
-
 app.use(express.static(distRoot));
 
 app.use((req, res, next) => {
@@ -89,10 +85,6 @@ app.use((req, res, next) => {
       res.send(str);
     },
   );
-});
-
-app.use((req, res) => {
-  res.status(404).send('page not found');
 });
 
 app.use(function (err, req, res, next) {
