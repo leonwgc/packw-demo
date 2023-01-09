@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const { demo, h5, pc } = require('./ssr-lib/index');
+const ssrRenderer = require('./ssr-lib/index'); // pack.ssr.js 构建的commonjs模块， 导出了一个对象， 包含
 app.disable('x-powered-by');
 app.enable('trust proxy');
 
@@ -17,34 +17,19 @@ app.get(/\.html?/, (req, res, next) => {
 
 app.use(express.static(distRoot));
 
-app.get(/\/h5/, (req, res, next) => {
-  // h5() get h5 ssr content
-  res.render('h5', { html: h5(), delimiter: '?' }, (err, str) => {
-    if (err) {
-      throw err;
-    }
-    res.send(str);
-  });
-});
+app.use((req, res, next) => {
+  const context = {};
 
-app.get(/\/pc/, (req, res, next) => {
-  // pc() get pc ssr content
-  res.render('pc', { html: pc(), delimiter: '?' }, (err, str) => {
-    if (err) {
-      throw err;
-    }
-    res.send(str);
-  });
-});
-
-app.get(/\//, (req, res, next) => {
-  // pc() get pc ssr content
-  res.render('index', { html: index(req.path), delimiter: '?' }, (err, str) => {
-    if (err) {
-      throw err;
-    }
-    res.send(str);
-  });
+  res.render(
+    'index',
+    { html: ssrRenderer.indexRender(req.url, context), delimiter: '?' },
+    (err, str) => {
+      if (err) {
+        throw err;
+      }
+      res.send(str);
+    },
+  );
 });
 
 app.use((req, res) => {

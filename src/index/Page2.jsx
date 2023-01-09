@@ -14,6 +14,7 @@ const Page2 = ({ history }) => {
       >
         go to page1
       </div>
+      <div style={{ color: '#005cff', fontSize: 20 }}>this is page2</div>
     </div>
   );
 };

@@ -9,6 +9,7 @@ const Page1 = ({ history }) => {
       >
         go to page2
       </div>
+      <div style={{ color: '#005cff', fontSize: 20 }}>this is page1</div>
     </div>
   );
 };

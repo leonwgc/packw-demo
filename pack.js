@@ -8,7 +8,6 @@ const process = require('process');
 const isDev = !!argv.dev;
 const cfg = argv.cfg;
 const env = argv.env;
-// const publicPath = isDev ? '' : `/`;
 
 function getPath(_path) {
   return path.resolve(__dirname, _path);
@@ -39,6 +38,7 @@ packw(
     },
     devServer: {
       port: 3000,
+      historyApiFallback: true,
     },
     output: {
       path: getDist(env),

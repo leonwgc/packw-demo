@@ -6,9 +6,7 @@ packw(
   false,
   {
     entry: {
-      h5: './src/h5/index',
-      pc: './src/pc/index',
-      route: './src/route/index',
+      index: './src/index/index.jsx',
     },
     output: {
       path: path.resolve(__dirname, './dist'),
