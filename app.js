@@ -16,16 +16,13 @@ app.use(express.static(distRoot));
 app.get(/\/*/, (req, res) => {
   const context = {};
 
-  res.render(
-    'index',
-    { html: ssrRenderer.indexRender(req.url, context), delimiter: '?' },
-    (err, str) => {
-      if (err) {
-        throw err;
-      }
-      res.send(str);
-    },
-  );
+  const { html, styleTags } = ssrRenderer.indexRender(req.url, context);
+  res.render('index', { html, styleTags, delimiter: '?' }, (err, str) => {
+    if (err) {
+      throw err;
+    }
+    res.send(str);
+  });
 });
 
 app.use((req, res) => {

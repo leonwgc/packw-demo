@@ -4451,19 +4451,14 @@ nan@^2.12.1:
   version "2.14.2"
   resolved "https://registry.npmjs.org/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
 
-nanoid@^3.1.23:
-  version "3.1.23"
-  resolved "https://registry.nlark.com/nanoid/download/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
-
-nanoid@^3.3.4:
+nanoid@^3.0.0, nanoid@^3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
   integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
-nanoid@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-4.0.0.tgz#6e144dee117609232c3f415c34b0e550e64999a5"
-  integrity sha512-IgBP8piMxe/gf73RTQx7hmnhwz0aaEXYakvqZyE302IXW3HyVNhdNGC+O2MwMAVhLEnvXlvKtGbtJf6wvHihCg==
+nanoid@^3.1.23:
+  version "3.1.23"
+  resolved "https://registry.nlark.com/nanoid/download/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -5912,10 +5907,10 @@ react-transition-group@^4.4.2:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react-uni-comps@^1.8.6-beta3:
-  version "1.8.6-beta3"
-  resolved "https://registry.yarnpkg.com/react-uni-comps/-/react-uni-comps-1.8.6-beta3.tgz#c7d245525e72a9b91990af63c9e1d85200c355f3"
-  integrity sha512-AM86qivGUjm+Kac0mg0YGaF0IKB+WR9ATVJ+9w6u4RV8HznnBUIKKiT/5Ji1+lnOPMMAw9AWy+EQMF0zuXx2Xw==
+react-uni-comps@^1.8.6-beta6:
+  version "1.8.6-beta6"
+  resolved "https://registry.yarnpkg.com/react-uni-comps/-/react-uni-comps-1.8.6-beta6.tgz#f72e7d17df90887e77c08242f8a9fff52b4cf298"
+  integrity sha512-iYcplYRBssQqdOUOuTSEuWzfNT3/4+dWY11sCjYgptIJuEIHFbQbdCIhiB0wBjh8bf2Jye1DaAiYT2DkCPSQow==
   dependencies:
     "@react-spring/web" "^9.4.2"
     "@types/sortablejs" "~1.13.0"
@@ -5923,7 +5918,7 @@ react-uni-comps@^1.8.6-beta3:
     color "^4.1.0"
     i18next "^21.6.16"
     intersection-observer "^0.12.0"
-    nanoid "^4.0.0"
+    nanoid "^3.0.0"
     rc-field-form "^1.22.1"
     react-i18next "^11.16.7"
     react-is "^17.0.2"
@@ -5933,7 +5928,7 @@ react-uni-comps@^1.8.6-beta3:
     styled-components "^5.3.3"
     tslib "^2.4.0"
     w-popover "1.1.8"
-    w-qrcode "1.0.0"
+    w-qrcode "~1.1.0"
     w-touch "1.1.0"
 
 react@^17.0.2:
@@ -6665,7 +6660,7 @@ style-loader@^3.3.1:
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-3.3.1.tgz#057dfa6b3d4d7c7064462830f9113ed417d38575"
   integrity sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==
 
-styled-components@^5.3.3:
+styled-components@^5.3.3, styled-components@^5.3.6:
   version "5.3.6"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.3.6.tgz#27753c8c27c650bee9358e343fc927966bfd00d1"
   integrity sha512-hGTZquGAaTqhGWldX7hhfzjnIYBZ0IXQXkCYdvF1Sq3DsUaLx6+NTHC5Jj1ooM2F68sBiVz3lvhfwQs/S3l6qg==
@@ -6984,10 +6979,10 @@ w-popover@1.1.8:
   resolved "https://registry.yarnpkg.com/w-popover/-/w-popover-1.1.8.tgz#e0e0532ee65d9fbe9a3a036002b22b3468146dc2"
   integrity sha512-38ukt3RcY32Bj/wMd00XB3zdGA07Dkx/dSiYgQ4QUe22EW3RtnKB742ro7/q574Wqi/d8KKppDvDuVS0kjMiJw==
 
-w-qrcode@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/w-qrcode/-/w-qrcode-1.0.0.tgz#5e5fa9990d36400dc547e74994e4d29c7f4127f1"
-  integrity sha512-G9y9meJzcAbFfqO8XSj24FBrquq/ngpBbHtVHDVr9cxVdLV/J9nLdcwQzt5gTAtXvfWxEBqS1pz2WDGdF0wUGg==
+w-qrcode@~1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/w-qrcode/-/w-qrcode-1.1.0.tgz#1bf28f0187cca7d757428737bd60191c2c2ab812"
+  integrity sha512-jkXlIzqpd+KKkFiB7jED4xLjgPWwb3HiAmU0qO34d1AwsfPgELxdi0Pdnq3csYDL7gMx8N5STziCq4Dn5X+idg==
 
 w-touch@1.1.0:
   version "1.1.0"

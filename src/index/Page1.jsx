@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Divider } from 'react-uni-comps';
 
 const Page1 = ({ history }) => {
   return (
@@ -9,7 +10,10 @@ const Page1 = ({ history }) => {
       >
         go to page2
       </div>
-      <div style={{ color: '#005cff', fontSize: 20 }}>this is page1</div>
+      <Divider />
+      <Button as="div" block style={{ color: '#005cff', fontSize: 20 }}>
+        this is page1
+      </Button>
     </div>
   );
 };
