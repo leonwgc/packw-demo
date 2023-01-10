@@ -1,19 +1,25 @@
 
 ## packw 打包，构建， ssr 示例
 
-##### 开发
+##### 开发命令
 
-- yarn start index
+> yarn start
 
-#### 构建
+#### 构建命令
 
-- yarn build index
+> yarn build
 
-### ssr
+### ssr命令
 
-1. node端打包，构建commonjs库, 放在ssr-lib目录, node调用ReactDOMServer.renderToString 渲染html
+> yarn ssr
 
-打包命令: node pack.ssr.js, 构建入口 /src/index.ssr.jsx 
+#### ssr 构建流程
+
+1. node端构建commonjs库, 放在ssr-lib目录,调用ReactDOMServer.renderToString 渲染html
+
+> node打包命令:` node pack.ssr.js`
+
+> 构建入口 /src/index.ssr.jsx 
 
 ```js
 import React from 'react';
@@ -34,7 +40,9 @@ export const indexRender = (location, context) => {
 
 2.  web端打包, 执行ReactDOM.hydrate , 打包结果放在dist目录,此时已经构建好css和js bundles , html内容等待node调用ejs注入（埋了一个注入点<?-html?>）
 
-打包命令: node pack.ssr.client.js, 打包入口 /src/index.jsx 
+> 打包命令: node pack.ssr.client.js
+
+> 打包入口 /src/index.jsx 
 
 ```js
 import React from 'react';
@@ -53,7 +61,7 @@ ReactDOM.hydrate(
 
 ```
 
-3. 启动node服务，接受请求， 动态调用commonjs库函数，生产html ,通过ejs 注入到dist模板index.html 文件， 发送给浏览器
+3. 启动node服务，接受请求，调用node打包的commonjs渲染html,然后通过ejs注入到模板文件并发送给浏览器
     
 
 ```js
