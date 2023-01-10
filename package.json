@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "clear": "rimraf ./dist && rimraf ./t-dist & clear",
-    "start": "node pack  --dev --cfg ",
-    "build": "node pack --env prd --cfg ",
+    "clear": "rimraf ./dist & clear",
+    "start": "packw start",
+    "build": "packw build",
     "ssr": "yarn clear && node pack.ssr.client && node pack.ssr.js && node app.js"
   },
   "author": "",
