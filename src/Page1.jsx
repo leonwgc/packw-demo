@@ -1,7 +1,9 @@
 import React from 'react';
-import { Button, Divider } from 'react-uni-comps';
+import { useHistory } from 'react-router-dom';
+import { Button, Divider, Input } from 'react-uni-comps';
 
-const Page1 = ({ history }) => {
+const Page1 = ({ dispatch, state }) => {
+  const history = useHistory();
   return (
     <div>
       <div
@@ -14,6 +16,26 @@ const Page1 = ({ history }) => {
       <Button as="div" block style={{ color: '#005cff', fontSize: 20 }}>
         this is page1
       </Button>
+
+      <div>
+        <div>
+          name from useReducer:<b>{state.name}</b>
+        </div>
+        <Divider />
+        <div>
+          age from useReducer:<b>{state.age}</b>
+        </div>
+        <Divider />
+        <div>
+          <Input
+            placeholder="input your name"
+            value={state.name}
+            onChange={(v) => {
+              dispatch({ type: 'update', payload: { name: v } });
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "clear": "rimraf ./dist & clear",
-    "start": "packw start",
+    "start": "node pack --dev",
     "build": "packw build",
     "ssr": "yarn clear && node pack.ssr.client && node pack.ssr.js && node app.js"
   },
