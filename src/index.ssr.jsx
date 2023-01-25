@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from 'react-uni-comps';
 import { Provider, configureStore } from 'simple-redux-store';
 import App from './App';
 
 export const indexRender = (location, context) => {
   const sheet = new ServerStyleSheet();
-  const store = configureStore({ name: 'server' });
+  const store = configureStore({ env: 'server' });
 
   try {
     const html = ReactDOMServer.renderToString(

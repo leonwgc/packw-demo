@@ -27,6 +27,7 @@ const App = ({ location, context }) => {
 
   const app = useAppData();
   const Router = typeof window === 'undefined' ? StaticRouter : BrowserRouter;
+
   return (
     <div>
       <ThemeProvider color="#005cff">
@@ -37,7 +38,6 @@ const App = ({ location, context }) => {
                 key={idx}
                 path={route.path}
                 exact={route.exact}
-                // component={route.component}
                 render={() => {
                   return <route.component dispatch={dispatch} state={state} />;
                 }}
@@ -46,7 +46,7 @@ const App = ({ location, context }) => {
             <Route render={() => <div>page not found</div>} />
           </Switch>
         </Router>
-        <div style={{ color: 'red', fontSize: 30 }}>{app.name}</div>
+        <div style={{ color: 'red', fontSize: 30 }}>{app.env} env</div>
       </ThemeProvider>
     </div>
   );
